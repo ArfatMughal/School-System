@@ -4,6 +4,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
+
                     <div class="card-header">
                         {{$channel->name}}
                     </div>
@@ -19,16 +20,24 @@
                                             <div class="channel-avatar-overlay" onclick="document.getElementById('image').click()">
                                             </div>
                                         @endif
+                                            <img alt="" src="{{ $channel->image()}}">
                                     </div>
-                                    <img src="{{ $channel->image()}}" alt="">
+
                                 </div>
                                 <div class="form-group">
-                                    <h4 class="text-center">
+                                    <h4 class="text-center mt-2">
                                         {{$channel->name}}
                                     </h4>
-                                    <p>
+                                    <p class="text-center">
                                         {{$channel->description}}
                                     </p>
+
+                                    <div class="text-center">
+                                        <button class="btn btn-danger">
+                                            Subscribe
+                                        </button>
+                                    </div>
+
                                 </div>
                                 @if($channel->editable())
                                     <input id="image" name="image" style="display: none"
